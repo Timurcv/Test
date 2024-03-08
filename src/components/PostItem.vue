@@ -25,7 +25,11 @@
                 type: Object,
                 required: true,
             }
+        },
+        mounted() {
+          console.log(this.post)
         }
+
     }
   </script>
 

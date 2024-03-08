@@ -118,9 +118,9 @@
     })
     },
     watch: {
-    //   page(){
-    //  this.fetchPost()
-    //   }
+      page(){
+     this.fetchPost()
+      }
     }
   }
   </script>

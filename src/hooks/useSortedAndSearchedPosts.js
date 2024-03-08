@@ -1,4 +1,4 @@
-import { ref } from "vue"
+import { ref,computed } from "vue"
 
 export default function useSortedPosts(sortedPosts) {
     const searchQuery = ref('')

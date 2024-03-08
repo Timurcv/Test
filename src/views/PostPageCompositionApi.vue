@@ -42,8 +42,10 @@
   import axios from "axios";
   import MyButton from "@/components/UI/MyButton.vue";
   import MyInput from "@/components/UI/MyInput.vue";
-import useSortedPosts from '@/hooks/useSortedPosts';
-  
+  import useSortedPosts from '@/hooks/useSortedPosts';
+  import { usePosts } from '@/hooks/usePosts';
+  import useSortedAndSearchedPosts from '@/hooks/useSortedAndSearchedPosts';
+
   export default {
       components: {
       PostForm,
@@ -64,9 +66,9 @@ import useSortedPosts from '@/hooks/useSortedPosts';
       }
     },
     setup(props) {
-      const {posts, totalPages, isPostsLoading} = usePosts(10);
+      const {posts, totalPages, isPostsLoading} = usePosts(10, 1);
       const {sortedPosts, selectedSort} = useSortedPosts(posts);
-      const {searchQuery, useSortedAndSearchedPosts} =useSortedAndSearchedPosts(sortedPosts)
+      const {searchQuery, } = useSortedAndSearchedPosts(sortedPosts)
      return {
       posts, 
       totalPages, 
@@ -74,7 +76,7 @@ import useSortedPosts from '@/hooks/useSortedPosts';
       sortedPosts,
       selectedSort,
       searchQuery,
-      useSortedAndSearchedPosts,
+      // useSortedAndSearchedPosts,
      }
    }
 }

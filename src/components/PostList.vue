@@ -1,5 +1,5 @@
 <template>
-  <div v-if="posts.length > 0">
+  <div v-if="posts && posts.length > 0">
     <h3>Список постов</h3>
     <transition-group name="user-list">
 <post-item
@@ -7,7 +7,7 @@
       :key="post.id" 
       :post="post"
       @remove="$emit('remove', post)"
-    />
+    /> 
     </transition-group>
   </div>
   <h2 v-else style="color: red;">Список постов пуст</h2>
